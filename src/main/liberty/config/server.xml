@@ -53,6 +53,7 @@
             </security-role>
             <security-role id="StockViewer" name="StockViewer">
                 <group name="StockViewer"/>
+            </security-role>
         </application-bnd>
     </webApplication>
 </server>
