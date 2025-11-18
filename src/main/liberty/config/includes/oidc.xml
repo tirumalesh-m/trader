@@ -16,6 +16,15 @@
       <!-- <feature>socialLogin-1.0</feature> Used for login against Facebook, LinkedIn, GitHub, etc., based on OIDC -->
       <feature>openidConnectClient-1.0</feature>
    </featureManager>
+  
+  <mpJwt id="stockTraderJWT"
+    audiences="${JWT_AUDIENCE}"
+    issuer="${JWT_ISSUER}"
+    jwksUri="${OIDC_JWKS_URL}"
+    userNameAttribute="sub"
+    groupNameAttribute="roles"
+    sslRef="defaultSSLConfig"
+    ignoreApplicationAuthMethod="true"/>
 
 <!-- <oidcLogin id="${env.OIDC_NAME}" clientId="${env.OIDC_ID}" displayName="${env.OIDC_NAME}"
       clientSecret="${env.OIDC_SECRET}" authorizationEndpoint="${env.OIDC_AUTH}"
