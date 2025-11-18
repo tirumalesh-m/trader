@@ -19,13 +19,7 @@
         <feature>microProfile-6.1</feature>
         <feature>pages-3.1</feature>
     </featureManager>
-    <mpJwt id="stockTraderJWT"
-       issuer="https://login.microsoftonline.com/147e32ab-2b66-4f09-b4d8-f98e9d3349ae/v2.0"
-       audiences="14d66f9b-1a4a-442e-a350-01b8b0742914"
-       jwksUri="https://login.microsoftonline.com/147e32ab-2b66-4f09-b4d8-f98e9d3349ae/discovery/v2.0/keys"
-       userNameAttribute="preferred_username"
-       groupNameAttribute="roles"
-       mapToUserRegistry="false"/>
+       
     <variable name="AUTH_TYPE"  defaultValue="basic"/>
     <variable name="TRACE_SPEC" defaultValue="*=info"/>
     <variable name="mp.jwt.verify.groupnameattribute" value="roles"/>   
