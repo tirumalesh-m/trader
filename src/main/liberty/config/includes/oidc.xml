@@ -36,6 +36,7 @@
       discoveryEndpointUrl="${env.OIDC_DISCOVERY_URL}"
       audiences="${env.OIDC_CLIENTID}"
       userNameAttribute="sub"
+      mapToUserRegistry="false"
       groupNameAttribute="roles">
    </openidConnectClient>
 
