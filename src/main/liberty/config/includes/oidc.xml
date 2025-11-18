@@ -38,4 +38,13 @@
       userNameAttribute="sub"
       groupNameAttribute="roles">
    </openidConnectClient>
+   <mpJwt id="stockTraderJWT"
+    audiences="${JWT_AUDIENCE}"
+    issuer="${JWT_ISSUER}"
+    jwksUri="${OIDC_JWKS_URL}"
+    userNameAttribute="sub"
+    groupNameAttribute="roles"
+    sslRef="defaultSSLConfig"
+    mapToUserRegistry="false"
+    ignoreApplicationAuthMethod="true"/>
 </server>
