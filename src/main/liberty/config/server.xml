@@ -41,7 +41,17 @@
     <mpMetrics authentication="false"/>
 
     <ltpa expiration="1h"/>
-
+    <mpJwt id="stockTraderJWT"
+    audiences="${JWT_AUDIENCE}"
+    issuer="${JWT_ISSUER}"
+    jwksUri="${OIDC_JWKS_URL}"
+    userNameAttribute="sub"
+    groupNameAttribute="roles"
+    sslRef="defaultSSLConfig"
+    mapToUserRegistry="false"
+    ignoreApplicationAuthMethod="true"/>
+       
+       
     <webAppSecurity allowFailOverToBasicAuth="true" displayAuthenticationRealm="true" logoutOnHttpSessionExpire="false"
         webAlwaysLogin="true" preserveFullyQualifiedReferrerUrl="true" trackLoggedOutSSOCookies="false" ssoCookieName="StockTraderSSO"
         useOnlyCustomCookieName="true" ssoUseDomainFromURL="true"/>
