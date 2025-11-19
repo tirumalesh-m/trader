@@ -26,6 +26,7 @@
          
   <openidConnectClient id="stock-trader"
       accessTokenInLtpaCookie="false"
+      tokensOrderToFetchCallerClaims="AccessToken IDToken Userinfo"   
       clientId="${env.OIDC_CLIENTID}"
       clientSecret="${env.OIDC_CLIENTSECRET}"
       jwtAccessTokenRemoteValidation="allow"
@@ -36,7 +37,7 @@
       discoveryEndpointUrl="${env.OIDC_DISCOVERY_URL}"
       audiences="${env.OIDC_CLIENTID}"
       userIdentifier="preferred_username"
-      groupIdentifier="roles"   
+      groupIdentifier="groups"   
       userNameAttribute="sub"
       mapToUserRegistry="false"
       groupNameAttribute="roles"> 
