@@ -34,10 +34,12 @@
       signatureAlgorithm="RS256"
       scope="openid profile email ${env.OIDC_SCOPE}"
       discoveryEndpointUrl="${env.OIDC_DISCOVERY_URL}"
-      audiences="${env.OIDC_CLIENTID}"
+      audiences="${env.OIDC_CLIENTID}" 
       userNameAttribute="sub"
       mapToUserRegistry="false"
       groupNameAttribute="roles">
+      <userIdentifier="preferred_username"/>
+      <groupIdentifier="roles"/> 
    </openidConnectClient>
 
 </server>
