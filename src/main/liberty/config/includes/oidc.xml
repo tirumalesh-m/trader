@@ -38,9 +38,7 @@
       audiences="${env.OIDC_CLIENTID}"
       userIdentifier="preferred_username"
       groupIdentifier="roles"   
-      userNameAttribute="sub"
-      mapToUserRegistry="false"
-      groupNameAttribute="roles"> 
+      mapToUserRegistry="false"> 
    </openidConnectClient>
 
 </server>
