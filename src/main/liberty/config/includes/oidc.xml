@@ -37,7 +37,7 @@
       discoveryEndpointUrl="${env.OIDC_DISCOVERY_URL}"
       audiences="${env.OIDC_CLIENTID}"
       userIdentifier="preferred_username"
-      groupIdentifier="groups"   
+      groupIdentifier="roles"   
       userNameAttribute="sub"
       mapToUserRegistry="false"
       groupNameAttribute="roles"> 
