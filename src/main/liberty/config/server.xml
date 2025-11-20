@@ -52,7 +52,6 @@
                <!--
             <security-role id="StockTrader" name="StockTrader">
                 <group name="StockTrader"/>
-                <user name="PPA_Tirumalesh.Mogulottu@kyncomcioofferingusdev.mscloud.kyndryl.com"/>   
             </security-role>
             <security-role id="StockViewer" name="StockViewer">
                 <group name="StockViewer"/>
