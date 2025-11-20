@@ -45,7 +45,6 @@
 			<url-pattern>/header.jpg</url-pattern>
 			<url-pattern>/footer.jpg</url-pattern>
 			<url-pattern>/health</url-pattern>
-			<url-pattern>/trader/health</url-pattern>
 			<url-pattern>/css/*</url-pattern>
 			<url-pattern>/js/*</url-pattern>
 		</web-resource-collection>
