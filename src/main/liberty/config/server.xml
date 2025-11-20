@@ -48,13 +48,13 @@
 
     <webApplication id="TraderUI" name="TraderUI" location="TraderUI.war" contextRoot="/trader">
         <classloader apiTypeVisibility="+third-party"/>
-        <application-bnd>
-            <!--<security-role id="StockTrader" name="StockTrader">
+        <!--<application-bnd>
+            <security-role id="StockTrader" name="StockTrader">
                 <group name="StockTrader"/>
             </security-role>
             <security-role id="StockViewer" name="StockViewer">
                 <group name="StockViewer"/>
-            </security-role>-->
-        </application-bnd>
+            </security-role>
+        </application-bnd>-->
     </webApplication>
 </server>
