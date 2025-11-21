@@ -101,6 +101,32 @@ public class Summary extends HttpServlet {
 		if (utilities == null) utilities = new Utilities(logger);
 	}
 
+	private void ensureJwtInSession(HttpServletRequest request) {
+    	HttpSession session = request.getSession(true);
+
+	    // 1) Token from POST form (implicit or SPA-based login)
+	    String tokenParam = request.getParameter(TOKEN);
+	    if (tokenParam != null && !tokenParam.isEmpty()) {
+	        logger.info("Placing JWT in the http session (from POST form)");
+	        session.setAttribute(JWT, tokenParam);
+	        return;
+	    }
+	
+	    // 2) OIDC attributes from Liberty (Entra ID via openidConnectClient)
+	    String accessTokenAttr = (String) request.getAttribute("com.ibm.websphere.security.oidc.access_token");
+	    String idTokenAttr     = (String) request.getAttribute("com.ibm.websphere.security.oidc.id_token");
+	    if ((accessTokenAttr != null && !accessTokenAttr.isEmpty())
+	        || (idTokenAttr != null && !idTokenAttr.isEmpty())) {
+	
+	        String chosen = (accessTokenAttr != null && !accessTokenAttr.isEmpty())
+	                ? accessTokenAttr
+	                : idTokenAttr;
+	
+	        session.setAttribute(JWT, chosen);
+	        logger.fine("Stored OIDC token from request attributes into session");
+	    }
+	}
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -112,7 +138,8 @@ public class Summary extends HttpServlet {
 
 		try {
             if (Utilities.useOIDC) {
-                String method = request.getMethod();
+                //ensureJwtInSession(request);
+				String method = request.getMethod();
                 // With some providers (e.g., Keycloak implicit flow), the access_token is POSTed back to this servlet.
                 // With Entra ID and Liberty OIDC, tokens are exposed on request attributes instead.
                 if (POST.equalsIgnoreCase(method)) {
@@ -225,6 +252,9 @@ public class Summary extends HttpServlet {
 	 */
 	@WithSpan
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (Utilities.useOIDC) {
+        	ensureJwtInSession(request);
+    	}
 		String submit = request.getParameter("submit");
 		HttpSession session = request.getSession();
 
