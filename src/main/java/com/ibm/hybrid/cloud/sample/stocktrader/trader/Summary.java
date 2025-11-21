@@ -115,13 +115,8 @@ public class Summary extends HttpServlet {
 	    // 2) OIDC attributes from Liberty (Entra ID via openidConnectClient)
 	    String accessTokenAttr = (String) request.getAttribute("com.ibm.websphere.security.oidc.access_token");
 	    String idTokenAttr     = (String) request.getAttribute("com.ibm.websphere.security.oidc.id_token");
-	    if ((accessTokenAttr != null && !accessTokenAttr.isEmpty())
-	        || (idTokenAttr != null && !idTokenAttr.isEmpty())) {
-	
-	        String chosen = (accessTokenAttr != null && !accessTokenAttr.isEmpty())
-	                ? accessTokenAttr
-	                : idTokenAttr;
-	
+	    if ((accessTokenAttr != null && !accessTokenAttr.isEmpty()) || (idTokenAttr != null && !idTokenAttr.isEmpty())) {
+	        String chosen = (accessTokenAttr != null && !accessTokenAttr.isEmpty()) ? accessTokenAttr : idTokenAttr;
 	        session.setAttribute(JWT, chosen);
 	        logger.fine("Stored OIDC token from request attributes into session");
 	    }
@@ -138,7 +133,7 @@ public class Summary extends HttpServlet {
 
 		try {
             if (Utilities.useOIDC) {
-                //ensureJwtInSession(request);
+                ensureJwtInSession(request);
 				String method = request.getMethod();
                 // With some providers (e.g., Keycloak implicit flow), the access_token is POSTed back to this servlet.
                 // With Entra ID and Liberty OIDC, tokens are exposed on request attributes instead.
