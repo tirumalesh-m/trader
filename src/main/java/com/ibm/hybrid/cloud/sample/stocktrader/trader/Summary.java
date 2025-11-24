@@ -240,8 +240,11 @@ public class Summary extends HttpServlet {
             return;
         }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsps/summary.jsp");
+		boolean isStockTrader = request.isUserInRole("StockTrader");
+		request.setAttribute("isStockTrader", isStockTrader);
 		logger.warning("*******************************************" + request.isUserInRole("StockTrader"));
 		logger.warning("*******************************************" + request.getAttribute("roles"));
+		logger.warning("*******************************************boolian value" + isStockTrader);
         dispatcher.forward(request, response);
 	}
 
