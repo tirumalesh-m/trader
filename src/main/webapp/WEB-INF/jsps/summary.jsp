@@ -56,7 +56,8 @@ static {
           <form method="post">
             <% List<Broker> brokers = (List<Broker>)request.getAttribute("brokers"); %>
             <% boolean noPortfolios = (brokers != null && brokers.isEmpty()); %>
-            <% if(request.isUserInRole("StockTrader")) { %>
+            <!--<% if(request.isUserInRole("StockTrader")) { %>-->
+            <% if(sessionScope.userRoles contains 'StockTrader') { %>
               <div class="mb-3 text-end">
                 <form method="post" style="display:inline;">
                   <input type="hidden" name="action" value="create"/>
