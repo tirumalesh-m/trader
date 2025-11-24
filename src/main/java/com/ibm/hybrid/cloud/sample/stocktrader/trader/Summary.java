@@ -133,7 +133,7 @@ public class Summary extends HttpServlet {
 
 		try {
             if (Utilities.useOIDC) {
-                ensureJwtInSession(request);
+                //ensureJwtInSession(request);
 				String method = request.getMethod();
                 // With some providers (e.g., Keycloak implicit flow), the access_token is POSTed back to this servlet.
                 // With Entra ID and Liberty OIDC, tokens are exposed on request attributes instead.
@@ -247,9 +247,9 @@ public class Summary extends HttpServlet {
 	 */
 	@WithSpan
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (Utilities.useOIDC) {
-        	ensureJwtInSession(request);
-    	}
+		//if (Utilities.useOIDC) {
+        //	ensureJwtInSession(request);
+    	//}
 		String submit = request.getParameter("submit");
 		HttpSession session = request.getSession();
 
