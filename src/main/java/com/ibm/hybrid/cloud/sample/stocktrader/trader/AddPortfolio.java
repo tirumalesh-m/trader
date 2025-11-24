@@ -46,7 +46,7 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
  * Servlet implementation class AddPortfolio
  */
 @WebServlet(description = "Add Portfolio servlet", urlPatterns = { "/addPortfolio" })
-@ServletSecurity(@HttpConstraint(rolesAllowed = { "StockTrader" } ))
+//@ServletSecurity(@HttpConstraint(rolesAllowed = { "StockTrader" } ))
 @ApplicationScoped
 public class AddPortfolio extends HttpServlet {
 	private static final long serialVersionUID = 4815162342L;
