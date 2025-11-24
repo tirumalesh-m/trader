@@ -254,7 +254,7 @@ public class Summary extends HttpServlet {
 		            }
 		        }
 		    }
-		} catch (Throwable t)
+		} catch (Throwable t) { /* ignore */ }
 		request.setAttribute("isStockTrader", isStockTrader);
 		logger.warning("*******************************************" + request.isUserInRole("StockTrader"));
 		logger.warning("*******************************************" + request.getAttribute("roles"));
