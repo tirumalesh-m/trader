@@ -49,7 +49,7 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
  * Servlet implementation class AddStock
  */
 @WebServlet(description = "Add Stock servlet", urlPatterns = { "/addStock" })
-@ServletSecurity(@HttpConstraint(rolesAllowed = { "StockTrader" } ))
+//@ServletSecurity(@HttpConstraint(rolesAllowed = { "StockTrader" } ))
 @ApplicationScoped
 public class AddStock extends HttpServlet {
 	private static final long serialVersionUID = 4815162342L;
