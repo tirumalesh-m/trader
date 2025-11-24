@@ -239,11 +239,26 @@ public class Summary extends HttpServlet {
             return;
         }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsps/summary.jsp");
-		boolean isStockTrader = request.isUserInRole("StockTrader");
+		boolean isStockTrader = false;
+		try {
+		    String token = utilities.getJWT(jwt, request);
+		    if (token != null && !token.isEmpty()) {
+		        String[] parts = token.split("\\.");
+		        if (parts.length == 3) {
+		            String payload = new String(
+		                java.util.Base64.getUrlDecoder().decode(parts[1]),
+		                java.nio.charset.StandardCharsets.UTF_8);
+		
+		            if (payload.contains("\"StockTrader\"")) {
+		                isStockTrader = true;
+		            }
+		        }
+		    }
+		} catch (Throwable t)
 		request.setAttribute("isStockTrader", isStockTrader);
 		logger.warning("*******************************************" + request.isUserInRole("StockTrader"));
 		logger.warning("*******************************************" + request.getAttribute("roles"));
-		logger.warning("*******************************************boolian value" + isStockTrader);
+		logger.warning("*******************************************boolian value:" + isStockTrader);
         dispatcher.forward(request, response);
 	}
 
