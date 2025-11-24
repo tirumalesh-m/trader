@@ -61,7 +61,6 @@ import org.apache.commons.math3.stat.descriptive.SynchronizedDescriptiveStatisti
  */
 @WebServlet(description = "Broker summary servlet", urlPatterns = { "/summary" })
 //@ServletSecurity(@HttpConstraint(rolesAllowed = { "StockTrader", "StockViewer" } ))
-@ServletSecurity(@HttpConstraint(rolesAllowed = {}))
 @ApplicationScoped
 public class Summary extends HttpServlet {
 	private static final long serialVersionUID = 4815162342L;
