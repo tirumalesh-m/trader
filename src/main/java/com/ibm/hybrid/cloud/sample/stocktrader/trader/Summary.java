@@ -239,8 +239,8 @@ public class Summary extends HttpServlet {
             return;
         }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsps/summary.jsp");
-		logger.warning("*******************************************"request.isUserInRole("StockTrader"));
-		logger.warning("*******************************************"request.getAttribute("roles"));
+		logger.warning("*******************************************" + request.isUserInRole("StockTrader"));
+		logger.warning("*******************************************" + request.getAttribute("roles"));
         dispatcher.forward(request, response);
 	}
 
