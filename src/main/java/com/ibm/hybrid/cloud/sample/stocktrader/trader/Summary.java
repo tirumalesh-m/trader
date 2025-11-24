@@ -60,7 +60,7 @@ import org.apache.commons.math3.stat.descriptive.SynchronizedDescriptiveStatisti
  * Servlet implementation class Summary
  */
 @WebServlet(description = "Broker summary servlet", urlPatterns = { "/summary" })
-//@ServletSecurity(@HttpConstraint(rolesAllowed = { "StockTrader", "StockViewer" } ))
+@ServletSecurity(@HttpConstraint(rolesAllowed = { "StockTrader", "StockViewer" } ))
 @ApplicationScoped
 public class Summary extends HttpServlet {
 	private static final long serialVersionUID = 4815162342L;
@@ -101,7 +101,7 @@ public class Summary extends HttpServlet {
 		if (utilities == null) utilities = new Utilities(logger);
 	}
 
-	private void ensureJwtInSession(HttpServletRequest request) {
+	/**private void ensureJwtInSession(HttpServletRequest request) {
     	HttpSession session = request.getSession(true);
 
 	    // 1) Token from POST form (implicit or SPA-based login)
@@ -120,7 +120,7 @@ public class Summary extends HttpServlet {
 	        session.setAttribute(JWT, chosen);
 	        logger.fine("Stored OIDC token from request attributes into session");
 	    }
-	}
+	}*/
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
