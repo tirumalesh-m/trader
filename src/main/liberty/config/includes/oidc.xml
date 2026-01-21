@@ -34,6 +34,7 @@
       responseType="code"
       signatureAlgorithm="RS256"
       scope="openid profile email groups"
+      tokenEndpointAuthMethod="client_secret_basic"
       discoveryEndpointUrl="${env.OIDC_DISCOVERY_URL}"
       audiences="${env.OIDC_CLIENTID}"
       userIdentifier="preferred_username"
