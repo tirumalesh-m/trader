@@ -26,7 +26,7 @@
          
   <openidConnectClient id="stock-trader"
       accessTokenInLtpaCookie="true"
-      tokensOrderToFetchCallerClaims="AccessToken IDToken Userinfo"   
+      tokensOrderToFetchCallerClaims="IDToken AccessToken Userinfo"   
       clientId="${env.OIDC_CLIENTID}"
       clientSecret="${env.OIDC_CLIENTSECRET}"
       jwtAccessTokenRemoteValidation="allow"
