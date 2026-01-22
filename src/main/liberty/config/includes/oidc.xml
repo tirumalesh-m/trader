@@ -26,19 +26,19 @@
          
   <openidConnectClient id="stock-trader"
       accessTokenInLtpaCookie="false"
-      tokensOrderToFetchCallerClaims="IDToken AccessToken Userinfo"   
+      tokensOrderToFetchCallerClaims="AccessToken IDToken Userinfo"   
       clientId="${env.OIDC_CLIENTID}"
       clientSecret="${env.OIDC_CLIENTSECRET}"
       jwtAccessTokenRemoteValidation="allow"
       inboundPropagation="supported"
-      responseType="code"
+      responseType="id_token token code"
       signatureAlgorithm="RS256"
-      scope="openid profile email groups stocktrader"
+      scope="openid profile email groups ${env.OIDC_SCOPE}"
       tokenEndpointAuthMethod="client_secret_post"
       discoveryEndpointUrl="${env.OIDC_DISCOVERY_URL}"
       audiences="${env.OIDC_CLIENTID}"
       userIdentifier="preferred_username"
-      groupIdentifier="groups"   
+      groupIdentifier="roles"   
       mapToUserRegistry="false"> 
    </openidConnectClient>
 
