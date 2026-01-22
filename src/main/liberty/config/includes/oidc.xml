@@ -31,6 +31,7 @@
       clientSecret="${env.OIDC_CLIENTSECRET}"
       jwtAccessTokenRemoteValidation="allow"
       inboundPropagation="supported"
+      outboundPropagation="required"   
       responseType="id_token token"
       signatureAlgorithm="RS256"
       scope="openid profile email groups read"
