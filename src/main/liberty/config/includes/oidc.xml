@@ -30,7 +30,7 @@
       clientId="${env.OIDC_CLIENTID}"
       clientSecret="${env.OIDC_CLIENTSECRET}"
       jwtAccessTokenRemoteValidation="allow"
-      inboundPropagation="supported"
+      inboundPropagation="required"
       outboundPropagation="required"   
       responseType="id_token token"
       signatureAlgorithm="RS256"
