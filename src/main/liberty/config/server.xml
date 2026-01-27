@@ -46,7 +46,8 @@
     <webAppSecurity allowFailOverToBasicAuth="true" displayAuthenticationRealm="true" logoutOnHttpSessionExpire="false"
         webAlwaysLogin="true" preserveFullyQualifiedReferrerUrl="true" trackLoggedOutSSOCookies="false" ssoCookieName="StockTraderSSO"
         useOnlyCustomCookieName="true" ssoUseDomainFromURL="true"/>
-
+    <jwtSso cookieName="StockTraderSSO" />
+       
     <webApplication id="TraderUI" name="TraderUI" location="TraderUI.war" contextRoot="/trader">
         <classloader apiTypeVisibility="+third-party"/>
         <!--<application-bnd>
