@@ -44,7 +44,8 @@
     <ltpa expiration="1h"/>
           
     <webAppSecurity allowFailOverToBasicAuth="true" displayAuthenticationRealm="true" logoutOnHttpSessionExpire="false"
-        webAlwaysLogin="true" preserveFullyQualifiedReferrerUrl="true" trackLoggedOutSSOCookies="false" useOnlyCustomCookieName="true" ssoUseDomainFromURL="true"/>
+        webAlwaysLogin="true" preserveFullyQualifiedReferrerUrl="true" trackLoggedOutSSOCookies="false" ssoCookieName="StockTraderSSO"
+          disableLtpaCookie="true" useOnlyCustomCookieName="true" ssoUseDomainFromURL="true"/>
     <jwtSso cookieName="StockTraderSSO" />
        
     <webApplication id="TraderUI" name="TraderUI" location="TraderUI.war" contextRoot="/trader">
