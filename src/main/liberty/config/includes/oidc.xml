@@ -15,6 +15,7 @@
    <featureManager>
       <!-- <feature>socialLogin-1.0</feature> Used for login against Facebook, LinkedIn, GitHub, etc., based on OIDC -->
       <feature>openidConnectClient-1.0</feature>
+      <feature>mpJwt-1.2</feature>    
    </featureManager>
   
 <!-- <oidcLogin id="${env.OIDC_NAME}" clientId="${env.OIDC_ID}" displayName="${env.OIDC_NAME}"
