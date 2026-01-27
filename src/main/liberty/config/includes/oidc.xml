@@ -32,6 +32,7 @@
       jwtAccessTokenRemoteValidation="allow"
       inboundPropagation="supported"
       outboundPropagation="required"
+      authnSessionDisabled="false"   
       propagateAccessToken="true"   
       responseType="id_token token"
       signatureAlgorithm="RS256"
@@ -41,7 +42,7 @@
       audiences="${env.OIDC_CLIENTID}"
       userIdentifier="preferred_username"
       groupIdentifier="roles"   
-      mapToUserRegistry="flase"> 
+      mapToUserRegistry="false"> 
    </openidConnectClient>
 
 </server>
