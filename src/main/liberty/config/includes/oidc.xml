@@ -30,7 +30,6 @@
       clientId="${env.OIDC_CLIENTID}"
       clientSecret="${env.OIDC_CLIENTSECRET}"
       jwtAccessTokenRemoteValidation="allow"
-      authnSessionDisabled="true"   
       inboundPropagation="supported"
       outboundPropagation="required"   
       responseType="id_token token"
@@ -41,7 +40,7 @@
       audiences="${env.OIDC_CLIENTID}"
       userIdentifier="preferred_username"
       groupIdentifier="roles"   
-      mapToUserRegistry="false"> 
+      mapToUserRegistry="flase"> 
    </openidConnectClient>
 
 </server>
