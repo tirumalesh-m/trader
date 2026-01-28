@@ -133,7 +133,8 @@ public class Utilities {
         try {
             String payloadJson = new String(Base64.getUrlDecoder().decode(parts[1]));
             // very light check on issuer to avoid logging secrets
-            return payloadJson.contains("login.microsoftonline.com") || payloadJson.contains("sts.windows.net");
+            return payloadJson.contains("login.microsoftonline.com") || payloadJson.contains("sts.windows.net") || payloadJson.contains("pingidentity.com") 
+            || payloadJson.contains("pingone.com");
         } catch (Throwable ignored) {
             return false;
         }
